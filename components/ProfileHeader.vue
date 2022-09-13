@@ -14,11 +14,11 @@
       </div>
       <label class="profile_name">{{ profile.name }}</label>
 
-      <bio>{{ profile.bio }}</bio>
+      <bio>"{{ profile.bio }}"</bio>
 
       <nav class="profile_tags">
         <ul>
-          <li v-for="tag in profile.tags" :key="tag">"{{ tag }}"</li>
+          <li v-for="tag in profile.tags" :key="tag">{{ tag }}</li>
         </ul>
       </nav>
 
