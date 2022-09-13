@@ -68,9 +68,6 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# Nuxt generate
-dist
-
 # vuepress build output
 .vuepress/dist
 
@@ -88,3 +85,19 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# All folder and file 
+components/
+pages/
+static/
+
+.editorconfig
+.gitattributes
+.gitignore
+.prettierignore
+.prettierrc
+.travis.yml
+jsconfig.json
+nuxt.config.js
+package-lock.json
+package.json
