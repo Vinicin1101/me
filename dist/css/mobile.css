@@ -1,7 +1,7 @@
 /* Adequar a página para dispositivo com telas inferiores a 600px de largura */
 
 @media screen and (max-width: 600px) {
-  html{
+  html {
     font-size: 100%;
   }
 
@@ -45,7 +45,7 @@
     width: 80%;
   }
 
-  section {
+  section.body>section {
     margin: 10% auto;
   }
 
