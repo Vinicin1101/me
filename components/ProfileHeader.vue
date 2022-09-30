@@ -46,7 +46,7 @@ export default {
       profile: {
         name: 'Vinicius Serafim',
         imageURL:
-          'https://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
+          'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
         bio: 'O amor é a compensação da morte.',
         tags: ['Estudante', 'IFSP'],
       },
@@ -64,7 +64,7 @@ export default {
         // trocando a resolução da imagem
         img.setAttribute(
           'src',
-          'https://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&'
+          'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&'
         )
 
         // desativando o popup
@@ -79,7 +79,7 @@ export default {
         // Trocando a resuolução da imagem
         img.setAttribute(
           'src',
-          'https://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=512&r=g'
+          'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=512&r=g'
         )
 
         // ativando o popup
