@@ -8,17 +8,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'vinicin1101',
+    title: 'Portifólio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 
-    // BoxIcons 
-    { rel: 'stylesheet', type: 'text/css', href: "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" },
+      // BoxIcons 
+      { rel: 'stylesheet', type: 'text/css', href: "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" },
     ],
 
   },
@@ -64,4 +65,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Modulo que otimiza o css, removendo regras de estilo não utilizadas
 }

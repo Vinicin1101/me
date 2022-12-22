@@ -1,33 +1,44 @@
 <template>
   <header>
-    <section class="profile">
-      <div class="picture">
+    <section class="profile d-flex flex-column align-items-center">
+      <div class="picture position-relative" @click="showProfile">
         <!-- Imagem do gravatar -->
         <img
-          :src="`${profile.imageURL}`"
+          :src="`${profile.picture.LOW}`"
           alt="profile_picture"
-          class="profile_pic"
+          class="profile_pic rounded-circle"
           id="profile_pic"
-          @click="showProfile()"
+          data-toggle="modal"
+          data-target="#myModal"
         />
-        <input type="button" value="X" id="close_pic" @click="showProfile()" />
+
+        <button class="bx bx-x" id="close_pic"></button>
       </div>
-      <label class="profile_name">{{ profile.name }}</label>
 
-      <bio>"{{ profile.bio }}"</bio>
+      <label class="profile_name mt-3 mb-0">{{ profile.name }}</label>
 
-      <nav class="profile_tags">
+      <bio class="text-muted mt-2 mb-3">{{ profile.bio }}</bio>
+
+      <nav class="profile_tags d-flex flex-wrap mb-3">
         <ul>
-          <li v-for="tag in profile.tags" :key="tag">{{ tag }}</li>
+          <li
+            v-for="tag in profile.tags"
+            :key="tag"
+            class="badge badge-secondary mr-2 mb-2"
+          >
+            {{ tag }}
+          </li>
         </ul>
       </nav>
 
-      <nav class="btns">
+      <nav class="btns d-flex justify-content-center mb-3">
         <ul>
-          <li class="btn-link"><a href="#" class="btn-primary">Home</a></li>
+          <li class="btn-link mr-3">
+            <a href="#" class="btn btn-primary">Home</a>
+          </li>
 
           <li class="btn-link">
-            <a href="mailto:vserafim_o@outlook.com" class="btn-primary"
+            <a :href="`mailto: ${profile.email}`" class="btn btn-primary"
               >Contato</a
             >
           </li>
@@ -36,8 +47,8 @@
     </section>
   </header>
 </template>
-
-<script>
+  
+  <script>
 export default {
   name: 'Profile-Header',
 
@@ -45,11 +56,16 @@ export default {
     return {
       profile: {
         name: 'Vinicius Serafim',
-        imageURL:
-          'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
-        bio: 'O amor é a compensação da morte.',
-        tags: ['Estudante', 'IFSP'],
+        email: 'vserafim_o@outlook.com',
+        picture: {
+          HIGH: 'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=512&r=g&d=identicon',
+          LOW: 'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
+        },
+        bio: 'Você vive hoje uma vida que gostaria de viver por toda a eternidade?',
+        tags: ['Aprendiz', 'DEV', 'Python', 'Spring', 'Nuxt'],
       },
+
+      isProfileVisible: true,
     }
   },
 
@@ -57,15 +73,12 @@ export default {
     showProfile() {
       const img = document.querySelector('#profile_pic')
       const btnClose = document.querySelector('#close_pic')
-      const div = document.querySelector('div.picture')
+      const div = document.querySelector('div.picture.position-relative')
 
       // condição de ativação do popup
       if (div.classList.contains('active')) {
         // trocando a resolução da imagem
-        img.setAttribute(
-          'src',
-          'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&'
-        )
+        img.setAttribute('src', this.profile.picture.LOW)
 
         // desativando o popup
         div.classList.remove('active')
@@ -77,10 +90,7 @@ export default {
         btnClose.style.display = 'none'
       } else {
         // Trocando a resuolução da imagem
-        img.setAttribute(
-          'src',
-          'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=512&r=g'
-        )
+        img.setAttribute('src', this.profile.picture.HIGH)
 
         // ativando o popup
         div.classList.add('active')
