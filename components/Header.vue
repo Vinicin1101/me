@@ -15,7 +15,7 @@
         </li>
 
         <li class="btn-link mr-3">
-          <a href="projects" class="btn btn-primary">Projecs</a>
+          <a href="projects" class="btn btn-primary">Projetos</a>
         </li>
       </ul>
     </nav>
