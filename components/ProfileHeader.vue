@@ -1,16 +1,16 @@
 <template>
   <header>
     <section class="profile">
-      <div class="picture">
+      <div class="picture" @click="showProfile()">
         <!-- Imagem do gravatar -->
         <img
           :src="`${profile.imageURL}`"
           alt="profile_picture"
           class="profile_pic"
           id="profile_pic"
-          @click="showProfile()"
         />
-        <input type="button" value="X" id="close_pic" @click="showProfile()" />
+        <button class="bx bx-x" id="close_pic"></button>
+        <!-- <button id="close_pic" @click="showProfile()"></button> -->
       </div>
       <label class="profile_name">{{ profile.name }}</label>
 
@@ -27,7 +27,7 @@
           <li class="btn-link"><a href="#" class="btn-primary">Home</a></li>
 
           <li class="btn-link">
-            <a href="mailto:vserafim_o@outlook.com" class="btn-primary"
+            <a :href="`mailto: ${profile.email}`" class="btn-primary"
               >Contato</a
             >
           </li>
@@ -45,10 +45,11 @@ export default {
     return {
       profile: {
         name: 'Vinicius Serafim',
+        email: 'vserafim_o@outlook.com',
         imageURL:
           'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
-        bio: 'O amor é a compensação da morte.',
-        tags: ['Estudante', 'IFSP'],
+        bio: 'Você vive hoje uma vida que gostaria de viver por toda a eternidade?',
+        tags: ['', 'DEV'],
       },
     }
   },

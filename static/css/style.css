@@ -46,14 +46,14 @@ header img.profile_pic {
 }
 
 div.picture.active img.profile_pic {
-  position: absolute;
-  right: calc(50% - 45px);
-  top: calc(50% - 45px);
+  position: absolute !important;
+  right: calc(50% - 45px) !important;
+  top: calc(25vh + 45px) !important;
 
-  transform: scale(3);
+  transform: scale(3.5) !important;
 
-  border: none;
-  border-radius: 0;
+  border: none !important;
+  border-radius: 0 !important;
 }
 
 div.picture.active::before {
@@ -61,7 +61,7 @@ div.picture.active::before {
 
   position: absolute;
   top: 0;
-  left: 0;
+  left: calc(-50vw + 45px) !important;
   z-index: 100;
 
   width: 100vw;
@@ -90,7 +90,7 @@ div.picture.active::after {
 }
 
 header label.profile_name {
-  font-size: 18pt;
+  /* font-size: 18pt; */
   font-weight: 200;
 }
 
@@ -109,8 +109,12 @@ nav ul {
 }
 
 nav.profile_tags ul li {
-  margin: 5px 10px;
-  list-style: "#";
+  margin: 5px 10px !important;
+  padding: 5px 10px;
+}
+
+nav.profile_tags ul li::before {
+  content: "#";
 }
 
 table.gostos {
