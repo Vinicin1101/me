@@ -3,7 +3,7 @@ export default {
   target: 'static',
 
   router: {
-    base: '/Vinicin1101/'
+    base: '/'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
