@@ -26,23 +26,11 @@
     list-style: none;
   }
 
-  table.gostos {
-    margin-top: 15%;
-    width: 130%;
-    position: relative;
-    right: 15%;
-  }
-
   section.highlights {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  section.highlights div.item {
-    padding: 5%;
-    width: 80%;
   }
 
   section.body>section {

@@ -20,6 +20,13 @@ export default {
 
       // BoxIcons 
       { rel: 'stylesheet', type: 'text/css', href: "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" },
+
+      // Bootstrap 5.2.3
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' },
+      { rel: 'script', type: 'text/javascript', href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" },
+
+      // Jquery
+      { rel: 'script', type: 'text/javascript', href: "https://code.jquery.com/jquery-3.6.3.slim.js" }
     ],
 
   },

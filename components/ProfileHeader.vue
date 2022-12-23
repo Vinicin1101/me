@@ -20,7 +20,7 @@
       <bio class="text-muted mt-2 mb-3">{{ profile.bio }}</bio>
 
       <nav class="profile_tags d-flex flex-wrap mb-3">
-        <ul>
+        <ul class="col flex-wrap mr-2 mb-3">
           <li
             v-for="tag in profile.tags"
             :key="tag"
