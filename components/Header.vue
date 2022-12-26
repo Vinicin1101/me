@@ -1,6 +1,6 @@
 <template>
   <header>
-    <a href="profile" class="profile-link">
+    <a href="profile" class="profile-link" v-if="profile">
       <img
         src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
         alt="profile_picture"
@@ -37,3 +37,16 @@ header {
   line-height: 65px;
 }
 </style>
+
+<script>
+import { boolean } from 'webidl-conversions'
+
+export default {
+  props: {
+    profile: {
+      type: boolean,
+      default: true,
+    },
+  },
+}
+</script>

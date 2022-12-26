@@ -15,35 +15,21 @@
         <button class="bx bx-x" id="close_pic"></button>
       </div>
 
-      <label class="profile_name mt-3 mb-0">{{ profile.name }}</label>
-
-      <bio class="text-muted mt-2 mb-3">{{ profile.bio }}</bio>
+      <label class="profile_name mt-3 mb-3">{{ profile.name }}</label>
 
       <nav class="profile_tags d-flex flex-wrap mb-3">
-        <ul class="col flex-wrap mr-2 mb-3">
+        <ul class="col flex-wrap mb-4 gap-2">
           <li
-            v-for="tag in profile.tags"
+            v-for="tag in profile.tagsTipadas"
             :key="tag"
-            class="badge badge-secondary mr-2 mb-2"
+            :class="`${tag.type} badge badge-secondary mb-2`"
           >
-            {{ tag }}
+            {{ tag.value }}
           </li>
         </ul>
       </nav>
 
-      <nav class="btns d-flex justify-content-center mb-3">
-        <ul>
-          <li class="btn-link mr-3">
-            <a href="#" class="btn btn-primary">Home</a>
-          </li>
-
-          <li class="btn-link">
-            <a :href="`mailto: ${profile.email}`" class="btn btn-primary"
-              >Contato</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <bio class="text-muted mt-2 mb-2">{{ profile.bio }}</bio>
     </section>
   </header>
 </template>
@@ -62,7 +48,15 @@ export default {
           LOW: 'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
         },
         bio: 'Você vive hoje uma vida que gostaria de viver por toda a eternidade?',
-        tags: ['Aprendiz', 'DEV', 'Python', 'Spring', 'Nuxt'],
+        tags: ['Aprendiz', 'DEV', 'Python', 'Spring', 'Nuxt', 'Brasil'],
+        tagsTipadas: [
+          { type: 'level', value: 'Aprendiz' },
+          { type: 'skill', value: 'Dev' },
+          { type: 'skill', value: 'Python' },
+          { type: 'skill', value: 'Spring' },
+          { type: 'skill', value: 'Nuxt' },
+          { type: 'location', value: 'Brasil' },
+        ],
       },
 
       isProfileVisible: true,

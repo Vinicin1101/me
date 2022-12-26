@@ -1,5 +1,9 @@
 <template>
-  <main><ProfileHeader></ProfileHeader></main>
+  <main>
+    <Header :profile="false" />
+    <ProfileHeader />
+    <Footer />
+  </main>
 </template>
 
 <script>

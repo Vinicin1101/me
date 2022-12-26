@@ -114,8 +114,16 @@ nav.profile_tags ul li {
   padding: 5px 10px !important;
 }
 
-nav.profile_tags ul li::before {
-  content: "#";
+nav.profile_tags ul li[class^="skill"]::before {
+  content: "🎯";
+}
+
+nav.profile_tags ul li[class^="level"]::before {
+  content: "⏳";
+}
+
+nav.profile_tags ul li[class^="location"]::before {
+  content: "🌎";
 }
 
 table.gostos {
@@ -178,4 +186,14 @@ div.item:hover {
 
   color: #fff;
   background-color: #000;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+div.technologies img {
+  width: 100px;
 }
