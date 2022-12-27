@@ -17,14 +17,14 @@
         profile.name
       }}</label>
 
-      <bio class="text-muted mt-2 mb-4">{{ profile.bio }}</bio>
+      <bio class="text-center text-muted mt-2 mb-4">{{ profile.bio }}</bio>
 
-      <nav class="profile_tags d-flex flex-wrap mb-3">
-        <ul class="col flex-wrap mb-2 mt-2 gap-2">
+      <nav class="profile_tags mb-3">
+        <ul class="col d-flex flex-wrap justify-content-center mb-2 mt-2 gap-3">
           <li
             v-for="tag in profile.tagsTipadas"
             :key="tag"
-            :class="`${tag.type} badge badge-secondary mb-2`"
+            :class="`${tag.type} badge badge-secondary`"
           >
             {{ tag.value }}
           </li>
@@ -66,7 +66,7 @@ export default {
   methods: {
     showProfile() {
       const img = document.querySelector('#profile_pic')
-      const btnClose = document.querySelector('#close_pic')
+      // const btnClose = document.querySelector('#close_pic')
       const div = document.querySelector('div.picture.position-relative')
 
       // condição de ativação do popup
@@ -81,7 +81,7 @@ export default {
         document.body.style.overflow = 'auto'
 
         // desativando o botao de fechar
-        btnClose.style.display = 'none'
+        // btnClose.style.display = 'none'
       } else {
         // Trocando a resuolução da imagem
         img.setAttribute('src', this.profile.picture.HIGH)
@@ -93,13 +93,13 @@ export default {
         document.body.style.overflow = 'hidden'
 
         // ativando o botao de fechar
-        btnClose.style.display = 'block'
-        btnClose.style.position = 'absolute'
+        // btnClose.style.display = 'block'
+        // btnClose.style.position = 'absolute'
 
         // posicionamento calculado com base na tela e na imagem
-        btnClose.style.left = `calc(50% + 120px)`
-        btnClose.style.top = `calc(50% - 150px)`
-        btnClose.style.zIndex = '10000'
+        // btnClose.style.left = `calc(50% + 120px)`
+        // btnClose.style.top = `calc(50% - 150px)`
+        // btnClose.style.zIndex = '10000'
       }
     },
   },

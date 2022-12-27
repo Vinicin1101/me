@@ -3,10 +3,13 @@
 @media screen and (max-width: 600px) {
   html {
     font-size: auto;
+    width: 100%;
   }
 
-  header {
+  header,
+  footer {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
   }

@@ -1,6 +1,10 @@
 <template>
-  <header>
-    <a href="profile" class="profile-link" v-if="profile">
+  <header class="bg-black clearfix">
+    <a
+      href="profile"
+      class="profile-link float-left vertical-align-center"
+      v-if="profile"
+    >
       <img
         src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
         alt="profile_picture"
@@ -8,8 +12,8 @@
         id="profile_pic"
       />
     </a>
-    <nav class="btns d-flex justify-content-center mb-0 gap-2">
-      <ul>
+    <nav class="clearfix">
+      <ul class="nav justify-content-center">
         <li class="btn-link mr-3">
           <a href="#" class="btn btn-primary">Home</a>
         </li>
@@ -19,7 +23,6 @@
         </li>
       </ul>
     </nav>
-    <div class="clearfix"></div>
   </header>
 </template>
 
