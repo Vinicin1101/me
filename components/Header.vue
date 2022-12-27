@@ -8,7 +8,7 @@
         id="profile_pic"
       />
     </a>
-    <nav class="btns d-flex justify-content-center mb-3">
+    <nav class="btns d-flex justify-content-center mb-0 gap-2">
       <ul>
         <li class="btn-link mr-3">
           <a href="#" class="btn btn-primary">Home</a>

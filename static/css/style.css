@@ -23,16 +23,18 @@ footer {
 
   background-color: #000;
   color: #fff;
+
+  z-index: 10000;
 }
 
-header section.profile {
+section.profile {
   display: flex;
 
   flex-direction: column;
   align-items: center;
 }
 
-header img.profile_pic {
+img.profile_pic {
   /* cortar a imagem com 90px por 90px */
   image-rendering: pixelated;
   width: 90px;
@@ -89,12 +91,12 @@ div.picture.active::after {
   background-size: 90px;
 }
 
-header label.profile_name {
+label.profile_name {
   font-size: 18pt;
   font-weight: 200;
 }
 
-header div.profile_tags {
+div.profile_tags {
   margin: 1% 0;
 }
 
@@ -190,10 +192,23 @@ div.item:hover {
 
 footer {
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  position: absolute !important;
+  bottom: end;
 }
 
-div.technologies img {
-  width: 100px;
+section.technologies a {
+  padding: 5px;
+
+  transition: all 0.5s 125ms;
+}
+
+section.technologies a>img {
+  width: 70px;
+  filter: grayscale(1);
+
+  transition: all 0.5s 20ms;
+}
+
+section.technologies a:hover img {
+  filter: none;
 }

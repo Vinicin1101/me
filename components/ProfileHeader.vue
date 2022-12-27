@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <article class="d-flex justify-content-center pt-5 bg-black">
     <section class="profile d-flex flex-column align-items-center">
       <div class="picture position-relative" @click="showProfile">
         <!-- Imagem do gravatar -->
@@ -11,14 +11,16 @@
           data-toggle="modal"
           data-target="#myModal"
         />
-
-        <button class="bx bx-x" id="close_pic"></button>
       </div>
 
-      <label class="profile_name mt-3 mb-3">{{ profile.name }}</label>
+      <label class="profile_name mt-2 mb-1 text-white">{{
+        profile.name
+      }}</label>
+
+      <bio class="text-muted mt-2 mb-4">{{ profile.bio }}</bio>
 
       <nav class="profile_tags d-flex flex-wrap mb-3">
-        <ul class="col flex-wrap mb-4 gap-2">
+        <ul class="col flex-wrap mb-2 mt-2 gap-2">
           <li
             v-for="tag in profile.tagsTipadas"
             :key="tag"
@@ -28,10 +30,8 @@
           </li>
         </ul>
       </nav>
-
-      <bio class="text-muted mt-2 mb-2">{{ profile.bio }}</bio>
     </section>
-  </header>
+  </article>
 </template>
   
   <script>

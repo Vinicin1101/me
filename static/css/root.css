@@ -1,10 +1,28 @@
 html {
   scroll-behavior: smooth;
+  width: 100vw;
+  min-height: 100vh;
 }
 
-section.body {
-  margin: none !important;
-  padding: none !important;
+main {
+  margin-top: 90px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  top: 100%;
+}
+
+article.body {
+  margin: 0;
+  padding: 0;
 }
 
 .flex {
@@ -253,11 +271,4 @@ div.playlist-content {
 
 div.playlist-content iframe {
   z-index: 0;
-}
-
-/* Bootstrap */
-
-.mb-3,
-.my-3 {
-  margin-bottom: 0 !important;
 }
