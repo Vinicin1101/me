@@ -4,6 +4,7 @@
       d-flex
       flex-column
       justify-content-center
+      align-items-center
       text-center
       bg-black
       text-white
