@@ -1,41 +1,5 @@
-/* Importação do Google Fonts */
-@import url('http://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: monospace;
-  color: #000;
-
-  background-color: #fff;
-
-  overflow-x: hidden;
-}
-
-header,
-footer {
-  padding: 50px;
-  height: fit-content;
-  margin: 0 auto;
-
-  text-align: center;
-
-  background-color: #000;
-  color: #fff;
-
-  z-index: 10000;
-}
-
-section.profile {
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
-}
-
+/* imagem de perfil */
 img.profile_pic {
-  /* cortar a imagem com 90px por 90px */
   image-rendering: pixelated;
   width: 90px;
 
@@ -86,116 +50,17 @@ div.picture.active::after {
   border: 1px solid #fff;
   border-radius: 50%;
 
-  /* imagem padrão do gravatar */
+
   background-image: url('https://www.gravatar.com/avatar/?s=90&d=mp');
   background-size: 90px;
 }
 
-label.profile_name {
-  font-size: 18pt;
-  font-weight: 200;
+/* Corrigindo alinhamento vertical do perfil no header */
+.profile-link {
+  line-height: 75px !important;
 }
 
-div.profile_tags {
-  margin: 1% 0;
-}
-
-nav ul {
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
-}
-
-nav.profile_tags ul li {
-  margin: 5px 10px !important;
-  padding: 5px 10px !important;
-}
-
-nav.profile_tags ul li[class^="skill"]::before {
-  content: "🎯";
-}
-
-nav.profile_tags ul li[class^="level"]::before {
-  content: "⏳";
-}
-
-nav.profile_tags ul li[class^="location"]::before {
-  content: "🌎";
-}
-
-table.gostos {
-  width: 50%;
-  margin: 0 auto;
-
-  border: 1px solid #000;
-  border-collapse: collapse;
-  border-spacing: 0;
-
-  transition: all 0.5s;
-}
-
-table.gostos tr td {
-  width: 50%;
-
-  padding: 10px;
-
-  border: 1px solid #000;
-  border-bottom: none;
-  border-top: none;
-}
-
-table.gostos thead tr th {
-  padding: 10px;
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-}
-
-section.highlights {
-  width: 100vw;
-
-  position: relative;
-  right: 15vw;
-
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-section.highlights div.item {
-  width: 40%;
-  margin: 1%;
-  padding: 2%;
-
-  display: flex;
-  flex-direction: column;
-
-  background-color: #000;
-  color: #fff;
-
-  transition: all 0.5s 125ms;
-}
-
-div.item:hover {
-  transform: translateY(-2%);
-
-  color: #fff;
-  background-color: #000;
-}
-
-footer {
-  width: 100%;
-  position: absolute !important;
-  bottom: end;
-}
-
+/* Animação dos links do rodapé */
 section.technologies a {
   padding: 5px;
 
@@ -204,6 +69,7 @@ section.technologies a {
 
 section.technologies a>img {
   width: 70px;
+  height: 70px;
   filter: grayscale(1);
 
   transition: all 0.5s 20ms;

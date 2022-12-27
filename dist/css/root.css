@@ -1,66 +1,17 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
-  width: 100vw;
-  min-height: 100vh;
 }
 
-main {
-  margin-top: 90px;
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
+header,
 footer {
-  position: fixed;
-  width: 100%;
-  top: 100%;
-}
-
-article.body {
-  margin: 0;
-  padding: 0;
-}
-
-.flex {
-  width: 70vw;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-li.btn-link {
-  margin: 15px;
-  list-style: none;
-}
-
-div.picture {
-  user-select: none;
-}
-
-div.picture #close_pic {
-  width: 30px;
-  height: 30px;
-  display: none;
-
-  background-color: #fff;
-  color: #000;
-
-  border: none;
-  border-radius: 50%;
-
-  line-height: auto !important;
-}
-
-bio {
-  font-style: italic !important;
-  margin: 3%;
-  margin-top: 0;
+  width: 100% !important;
 }
 
 bio::after {
@@ -71,31 +22,14 @@ bio::before {
   content: '"';
 }
 
-section.body>section {
-  margin-top: 5%;
+/* Botões personalizados */
+
+.btn-link {
+  margin: 15px;
+  list-style: none;
 }
 
-article {
-  padding: 3%;
-  margin: 3% 0;
-  width: 100%;
-}
-
-container p {
-  text-align: justify;
-}
-
-h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.item img {
-  width: 100%;
-}
-
-a.btn-primary {
+.btn-primary {
   padding: 10px 20px;
 
   text-decoration: none;
@@ -108,7 +42,8 @@ a.btn-primary {
   transition: all 0.5s 125ms;
 }
 
-a.btn-secondary {
+
+.btn-secondary {
   padding: 10px;
 
   text-decoration: none;
@@ -120,20 +55,21 @@ a.btn-secondary {
   transition: all 0.5s;
 }
 
-a.btn-primary:hover {
+.btn-primary:hover {
   background-color: #fff;
   color: #000;
 
   border: 1px solid #000;
 }
 
-a.btn-secondary:hover {
+.btn-secondary:hover {
   background-color: #000;
   color: #fff;
 
   border: 1px solid #fff;
 }
 
+/* Bootstrap adapt */
 .btn:focus,
 .btn:active {
   color: #000 !important;
@@ -144,6 +80,7 @@ a.btn-secondary:hover {
 }
 
 
+/* Scroll */
 ::selection {
   background-color: rgb(191, 98, 210, 0.6);
   color: rgb(0, 0, 0);
@@ -172,103 +109,16 @@ moz-scrollbar-thumb {
   background-color: rgba(191, 98, 210, 0.6);
 }
 
-div.playlist {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* tags semanticas para o perfil */
+
+nav.profile_tags ul li[class^="skill"]::before {
+  content: "🎯";
 }
 
-.checkbox {
-  display: none;
-  opacity: 0;
+nav.profile_tags ul li[class^="level"]::before {
+  content: "⏳";
 }
 
-.checkbox:hover {
-  opacity: 0;
-}
-
-.label {
-  background-color: rgba(0, 0, 0, 1);
-  border-radius: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  position: relative;
-  height: 20px;
-  width: 50px;
-  transform: scale(1.2);
-  margin: 15px 0px;
-}
-
-.label i {
-  color: #fff;
-  font-weight: 100 !important;
-}
-
-.label .ball {
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 4px;
-  left: 5px;
-  height: 22px;
-  width: 22px;
-  transform: translateX(0px);
-  transition: all 0.2s ease-in-out;
-}
-
-.checkbox:checked+.label .ball {
-  transform: translateX(28px);
-}
-
-.spin-dual-ring {
-  width: 0px;
-  height: 0px;
-
-  position: relative;
-  top: -70px;
-  right: calc(-50% + 10px);
-
-  display: block;
-
-  z-index: -10;
-}
-
-.spin-dual-ring:after {
-  width: 20px;
-  height: 20px;
-
-  content: "";
-  display: block;
-
-  margin: 0 auto;
-
-  border-radius: 50%;
-  border: 3px solid rgb(0, 0, 0);
-  border-color: rgb(0, 0, 0) transparent rgb(0, 0, 0) transparent;
-
-  animation: spin .6s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-div.playlist-content {
-  transition: all 5s .2s;
-}
-
-div.playlist-content iframe {
-  z-index: 0;
+nav.profile_tags ul li[class^="location"]::before {
+  content: "🌎";
 }
