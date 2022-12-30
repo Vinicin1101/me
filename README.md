@@ -1,3 +1,3 @@
 # Link para esse projeto
 
-[Aqui]("www.vinicin.host")
+<a href="https://www.vinicin.host" target="_blank">Link</a>
