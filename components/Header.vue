@@ -9,7 +9,7 @@
         <img
           src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
           alt="profile_picture"
-          class="profile_pic rounded-circle btn buttom-pic"
+          class="profile_pic rounded-circle"
           id="profile_pic"
         />
       </a>
@@ -59,6 +59,12 @@ header {
 .profile_pic {
   width: 50px !important;
   height: 50px !important;
+
+  transform: 0.2s;
+}
+
+.profile_pic:hover {
+  filter: grayscale(0);
 }
 
 .profile-link {

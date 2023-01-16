@@ -1,7 +1,7 @@
 <template>
   <main>
     <Header :profile="false" />
-    <article class="d-flex justify-content-center mt-5">
+    <article class="m-5">
       <section class="profile d-flex flex-column align-items-center">
         <div class="picture position-relative" @click="showProfile">
           <!-- Imagem do gravatar -->
@@ -90,6 +90,7 @@
         </section>
       </section>
     </article>
+    <Footer />
   </main>
 </template>
 

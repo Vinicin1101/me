@@ -9,11 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-header,
-footer {
-  width: 100% !important;
-}
-
 bio::after {
   content: '"';
 }
@@ -30,8 +25,7 @@ bio::before {
 }
 
 .buttom-primary,
-.buttom-secondary,
-.buttom-pic {
+.buttom-secondary {
   --bg: #fff;
   --hover-bg: #ff90e8;
   --hover-text: #000;
@@ -48,25 +42,13 @@ bio::before {
   background: var(--bg);
 }
 
-.buttom-pic {
-  background-image: url('https://gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=50&r=g&d=identicon');
-  background-size: 50px;
-  padding: 0 !important;
-}
-
 .buttom-primary:hover,
-.buttom-secondary:hover,
-.buttom-pic:hover {
+.buttom-secondary:hover {
   color: var(--hover-text);
   transform: translate(-0.25rem, -0.25rem) !important;
   border: 1px solid var(--hover-text);
   background: var(--hover-bg);
   box-shadow: 0.25rem 0.25rem var(--bg);
-}
-
-.buttom-pic:hover {
-  background-image: url('https://gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=50&r=g&d=identicon');
-  background-size: 50px;
 }
 
 

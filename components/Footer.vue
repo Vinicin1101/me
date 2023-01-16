@@ -9,9 +9,9 @@
       bg-black
       text-white
       p-5
-      position-absolute
       top-100
       w-100
+      mt-5
     "
   >
     <p>© Todos os direitos reservados</p>
