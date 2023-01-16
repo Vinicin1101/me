@@ -50,15 +50,10 @@ div.picture.active::after {
   border: 1px solid #fff;
   border-radius: 50%;
 
-
   background-image: url('https://www.gravatar.com/avatar/?s=90&d=mp');
   background-size: 90px;
 }
 
-/* Corrigindo alinhamento vertical do perfil no header */
-.profile-link {
-  line-height: 75px !important;
-}
 
 /* Animação dos links do rodapé */
 section.technologies a {

@@ -73,9 +73,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['aos'],
-    vendor: ['aos']
-  },
+
+  }
+
 
   // Modulo que otimiza o css, removendo regras de estilo não utilizadas
 }

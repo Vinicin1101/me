@@ -29,45 +29,46 @@ bio::before {
   list-style: none;
 }
 
-.btn-primary {
-  padding: 10px 20px;
-
-  text-decoration: none;
-  text-align: center;
-
-  color: #fff;
-  background-color: #000;
-  border: 1px solid #fff;
-
-  transition: all 0.5s 125ms;
-}
-
-
-.btn-secondary {
-  padding: 10px;
-
-  text-decoration: none;
-  text-align: center;
-
+.buttom-primary,
+.buttom-secondary,
+.buttom-pic {
+  --bg: #fff;
+  --hover-bg: #ff90e8;
+  --hover-text: #000;
   color: #000;
-  background-color: #fff;
-
-  transition: all 0.5s;
+  border-radius: 4px;
+  padding: 0.5em 1.3em;
+  background: var(--bg);
+  transition: 0.2s !important;
 }
 
-.btn-primary:hover {
-  background-color: #fff;
-  color: #000;
-
-  border: 1px solid #000;
-}
-
-.btn-secondary:hover {
-  background-color: #000;
+.buttom-secondary {
+  --bg: #000;
   color: #fff;
-
-  border: 1px solid #fff;
+  background: var(--bg);
 }
+
+.buttom-pic {
+  background-image: url('https://gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=50&r=g&d=identicon');
+  background-size: 50px;
+  padding: 0 !important;
+}
+
+.buttom-primary:hover,
+.buttom-secondary:hover,
+.buttom-pic:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem, -0.25rem) !important;
+  border: 1px solid var(--hover-text);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+.buttom-pic:hover {
+  background-image: url('https://gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=50&r=g&d=identicon');
+  background-size: 50px;
+}
+
 
 /* Bootstrap adapt */
 .btn:focus,
@@ -76,18 +77,20 @@ bio::before {
   background-color: #fff !important;
   border: 1px solid #fff !important;
   border-color: #fff !important;
-  box-shadow: 0 0 1px 2px#fff !important;
+
+  transform: translate(0) !important;
+  box-shadow: none !important;
 }
 
 
 /* Scroll */
 ::selection {
-  background-color: rgb(191, 98, 210, 0.6);
+  background-color: #ff90e855;
   color: rgb(0, 0, 0);
 }
 
 ::-moz-selection {
-  background-color: rgb(191, 98, 210, 0.6);
+  background-color: #ff90e855;
   color: rgb(0, 0, 0);
 }
 
@@ -97,7 +100,7 @@ bio::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(191, 98, 210, 0.6);
+  background-color: #ff90e855;
 }
 
 moz-scrollbar {
@@ -106,7 +109,7 @@ moz-scrollbar {
 }
 
 moz-scrollbar-thumb {
-  background-color: rgba(191, 98, 210, 0.6);
+  background-color: #ff90e855;
 }
 
 /* tags semanticas para o perfil */

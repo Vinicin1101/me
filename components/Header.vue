@@ -1,54 +1,103 @@
 <template>
-  <header class="bg-black clearfix">
-    <a
-      href="profile"
-      class="profile-link float-left vertical-align-center"
-      v-if="profile"
-    >
-      <img
-        src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
-        alt="profile_picture"
-        class="profile_pic rounded-circle"
-        id="profile_pic"
-      />
-    </a>
-    <nav class="clearfix">
-      <ul class="nav justify-content-center">
-        <li class="btn-link mr-3">
-          <a href="#" class="btn btn-primary">Home</a>
-        </li>
+  <header class="d-flex bg-black">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black mx-auto">
+      <a
+        href="#"
+        class="profile-link vertical-align-center navbar-brand"
+        v-if="!isNavOpen"
+      >
+        <img
+          src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
+          alt="profile_picture"
+          class="profile_pic rounded-circle btn buttom-pic"
+          id="profile_pic"
+        />
+      </a>
+      <button class="navbar-toggler" type="button" @click="showNav()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNav"
+        :class="{ show: isNavOpen }"
+      >
+        <ul class="navbar-nav">
+          <a
+            href="#"
+            class="profile-link ml-0 vertical-align-center navbar-brand"
+            v-if="isNavOpen"
+          >
+            <img
+              src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
+              alt="profile_picture"
+              class="profile_pic rounded-circle"
+              id="profile_pic"
+            />
+          </a>
 
-        <li class="btn-link mr-3">
-          <a href="projects" class="btn btn-primary">Projetos</a>
-        </li>
-      </ul>
+          <li class="nav-item btn-link mr-3">
+            <a href="projects" class="btn buttom-primary">Projetos</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
 
 <style scoped>
+/* Ajusta o menu */
+.show > ul {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
   padding: 10px;
 }
-#profile_pic {
-  width: 50px;
-  height: 50px;
+.profile_pic {
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .profile-link {
   float: left;
-  line-height: 65px;
 }
 </style>
 
 <script>
 import { boolean } from 'webidl-conversions'
+import $ from 'jquery'
 
 export default {
   props: {
     profile: {
       type: boolean,
       default: true,
+    },
+  },
+
+  data() {
+    return {
+      isNavOpen: false,
+    }
+  },
+
+  methods: {
+    showNav() {
+      this.isNavOpen = !this.isNavOpen
+      if (this.isNavOpen) {
+        $('navbar-collapse')
+          .addClass('d-flex')
+          .addClass('flex-column')
+          .addClass('align-items-center')
+      }
+
+      $('navbar-collapse')
+        .removeClass('d-flex')
+        .removeClass('flex-column')
+        .removeClass('align-items-center')
     },
   },
 }
