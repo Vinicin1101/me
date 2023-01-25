@@ -115,3 +115,7 @@ ul li[class^="js"]::before {
 ul li[class^="lib"]::before {
   content: "📚";
 }
+
+ul li[class^="fw"]::before {
+  content: "🧰";
+}

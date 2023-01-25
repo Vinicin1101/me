@@ -46,14 +46,10 @@ export default {
     return {
       projetos: [
         {
-          title: 'Projeto 1',
-          description: 'lorem ipsum dolor sit amet, consectetur',
+          title: 'Escala Populacional em 3D',
+          description:
+            'Um pequeno projeto para aprender mais sobre a tecnologia ThreeJs',
           path: 'pj1',
-        },
-        {
-          title: 'Projeto 2',
-          description: 'lorem ipsum dolor sit amet, consectetur',
-          path: 'pj2',
         },
       ],
     }

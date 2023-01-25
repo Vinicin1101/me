@@ -30,19 +30,22 @@
         </ul>
       </div>
       <div class="row">
-        <div class="col-lg-6" data-aos="zoom-in-right" data-aos-delay="400">
+        <div class="col-lg-6" data-aos="zoom-in-right" data-aos-delay="300">
           <img :src="project[`${path}`].image" class="img-fluid" />
         </div>
-        <div class="col-lg-6" data-aos="zoom-in-left" data-aos-delay="400">
+        <div class="col-lg-6" data-aos="zoom-in-left" data-aos-delay="300">
           <h2>Descrição</h2>
           <p>{{ project[`${path}`].description }}</p>
           <h2>Detalhes</h2>
           <ul>
             <li>Categoria: {{ project[`${path}`].category }}</li>
-            <li>Repositório: <a :href="project[`${path}`].repo">GitHub</a></li>
+            <li>
+              Repositório:
+              <a target="_blank" :href="project[`${path}`].repo">GitHub</a>
+            </li>
             <li>
               App:
-              <a :href="project[`${path}`].deploy">Deploy</a>
+              <a target="_blank" :href="project[`${path}`].deploy">Deploy</a>
             </li>
           </ul>
         </div>
@@ -78,8 +81,8 @@ export default {
           deploy: 'https://3d.vinicin.host',
           technologies: [
             { name: 'JavaScript', type: 'js' },
-            { name: 'ThreeJs', type: '3D' },
-            { name: 'ExpressJs', type: 'js' },
+            { name: 'ThreeJs', type: 'lib' },
+            { name: 'ExpressJs', type: 'fw' },
           ],
         },
       },
