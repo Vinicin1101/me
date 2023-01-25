@@ -15,113 +15,17 @@
       "
     >
       <a
-        class="
-          card
-          bg-white
-          p-3
-          nowrap
-          flex-direction-column
-          align-items-center
-          justify-content-around
-          text-center
-        "
-        href="/projects/cronopedia"
+        v-bind="c"
+        v-for="c in projetos"
+        :key="c"
+        :href="`/project/${c.path}`"
+        class="card bg-white p-3 text-center"
       >
         <div class="card-content-heading">
-          <h3>Cronopédia</h3>
+          <h3>{{ c.title }}</h3>
         </div>
         <div class="card-content-body">
-          <p>
-            Projeto para criação de artigos desenvolvido em conjunto com
-            <a href="https://github.com/Tiago-Mart" class="text-success"
-              >@Tiago</a
-            >
-            e @André
-          </p>
-        </div>
-      </a>
-
-      <a
-        class="
-          card
-          bg-white
-          p-3
-          nowrap
-          flex-direction-column
-          align-items-center
-          justify-content-around
-          text-center
-        "
-        href="/projects/titulo"
-      >
-        <div class="card-content-heading">
-          <h3>Titulo</h3>
-        </div>
-        <div class="card-content-body">
-          <p>Descrição bolada</p>
-        </div>
-      </a>
-
-      <a
-        class="
-          card
-          bg-white
-          p-3
-          nowrap
-          flex-direction-column
-          align-items-center
-          justify-content-around
-          text-center
-        "
-        href="/projects/titulo"
-      >
-        <div class="card-content-heading">
-          <h3>Titulo</h3>
-        </div>
-        <div class="card-content-body">
-          <p>Descrição bolada</p>
-        </div>
-      </a>
-
-      <a
-        class="
-          card
-          bg-white
-          p-3
-          nowrap
-          flex-direction-column
-          align-items-center
-          justify-content-around
-          text-center
-        "
-        href="/projects/titulo"
-      >
-        <div class="card-content-heading">
-          <h3>Titulo</h3>
-        </div>
-        <div class="card-content-body">
-          <p>Descrição bolada</p>
-        </div>
-      </a>
-
-      <a
-        class="
-          card
-          bg-white
-          p-3
-          nowrap
-          flex-direction-column
-          align-items-center
-          justify-content-around
-          text-center
-        "
-        href="/projects/titulo"
-      >
-        <div class="card-content-heading">
-          <h3>Titulo</h3>
-        </div>
-        <div class="card-content-body">
-          <p>Descrição bolada</p>
+          <p>{{ c.description }}</p>
         </div>
       </a>
     </div>
@@ -135,6 +39,23 @@ export default {
   head() {
     return {
       title: 'Meus projetos',
+    }
+  },
+
+  data() {
+    return {
+      projetos: [
+        {
+          title: 'Projeto 1',
+          description: 'lorem ipsum dolor sit amet, consectetur',
+          path: 'pj1',
+        },
+        {
+          title: 'Projeto 2',
+          description: 'lorem ipsum dolor sit amet, consectetur',
+          path: 'pj2',
+        },
+      ],
     }
   },
 }
@@ -153,20 +74,6 @@ export default {
   border-left: 2px solid rgb(238, 103, 238);
 
   transition: all 0.5s;
-}
-
-/* ISSO É UM PROTÓTIPO */
-.card::after {
-  content: 'PROTÓTIPO';
-
-  position: absolute;
-
-  font-size: 38pt;
-
-  rotate: 30deg;
-
-  opacity: 0.3;
-  color: rgb(255, 0, 247);
 }
 
 .card:hover {
