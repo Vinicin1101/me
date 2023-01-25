@@ -94,7 +94,7 @@ moz-scrollbar-thumb {
   background-color: #ff90e855;
 }
 
-/* tags semanticas para o perfil */
+/* tags semanticas */
 
 ul li[class^="skill"]::before {
   content: "🎯";
@@ -109,6 +109,9 @@ ul li[class^="location"]::before {
 }
 
 ul li[class^="js"]::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f095";
+  content: "🔧";
+}
+
+ul li[class^="lib"]::before {
+  content: "📚";
 }
