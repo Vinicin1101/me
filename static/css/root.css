@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #000;
 }
 
 bio::after {
@@ -77,7 +78,7 @@ bio::before {
 }
 
 ::-webkit-scrollbar {
-  filter: invert(1);
+  background: #fff;
   width: 10px;
 }
 
@@ -108,14 +109,22 @@ ul li[class^="location"]::before {
   content: "🌎";
 }
 
-ul li[class^="js"]::before {
+ul li[class^="lan"]::before {
   content: "🔧";
 }
 
 ul li[class^="lib"]::before {
-  content: "📚";
+  content: "📖";
 }
 
 ul li[class^="fw"]::before {
   content: "🧰";
+}
+
+ul li[class^="sec"]::before {
+  content: "🔐";
+}
+
+ul li[class^="db"]::before {
+  content: "🎲";
 }

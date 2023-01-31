@@ -35,7 +35,7 @@
         </div>
         <div class="col-lg-6" data-aos="zoom-in-left" data-aos-delay="300">
           <h2>Descrição</h2>
-          <p>{{ project[`${path}`].description }}</p>
+          <p v-html="project[`${path}`].description"></p>
           <h2>Detalhes</h2>
           <ul>
             <li>Categoria: {{ project[`${path}`].category }}</li>
@@ -80,9 +80,40 @@ export default {
           repo: 'https://github.com/vinicin1101/world-population',
           deploy: 'https://3d.vinicin.host',
           technologies: [
-            { name: 'JavaScript', type: 'js' },
+            { name: 'JavaScript', type: 'lan' },
             { name: 'ThreeJs', type: 'lib' },
             { name: 'ExpressJs', type: 'fw' },
+          ],
+        },
+        pj2: {
+          title: 'API de Cadastro e Login com ExpressJS',
+          image: '/images/api.png',
+          description:
+            'Este projeto tem como objetivo criar uma API segura e completa para autenticação de usuários em aplicações web. Serão implementadas funcionalidades de cadastro, login, recuperação de senha, validação de dados e geração de tokens JWT. Além disso, serão utilizadas boas práticas de segurança para garantir a integridade dos dados dos usuários.',
+          releaseDate: '30 de janeiro de 2023',
+          category: 'Desenvolvimento Web',
+          repo: 'https://github.com/vinicin1101/treinando-express',
+          deploy: 'https://3d.vinicin.host',
+          technologies: [
+            { name: 'MySQL', type: 'db' },
+            { name: 'Express', type: 'fw' },
+            { name: 'JWT', type: 'sec' },
+            { name: 'Bcrypt', type: 'sec' },
+          ],
+        },
+        pj3: {
+          title: 'Cronopédia - Descontinuada',
+          image: '/images/crono.png',
+          description:
+            'A Cronopédia foi um projeto escolar, desenvolvido por @André Victor, <a href="https://github.com/Tiago-Mart">@Tiago Martins</a> e Vinícius Serafim. O objetivo era criar uma aplicação web para criação de artigos totalmente reponsiva.',
+          releaseDate: '28 de novembro de 2022',
+          category: 'Desenvolvimento Web',
+          repo: 'https://github.com/Cronopedia/Cronopedia',
+          technologies: [
+            { name: 'Java', type: 'lan' },
+            { name: 'Spring', type: 'fw' },
+            { name: 'JWT', type: 'sec' },
+            { name: 'Nuxt', type: 'fw' },
           ],
         },
       },
@@ -99,6 +130,10 @@ export default {
 }
 </script>
 
-<style>
-/* Adicione estilos adicionais aqui */
+<style scoped>
+img {
+  aspect-ratio: 3/2;
+  width: 100%;
+  background-color: #000;
+}
 </style>
