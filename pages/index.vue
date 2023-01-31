@@ -51,25 +51,9 @@
               data-aos-delay="400"
             >
               <h2 class="text-center">Sobre mim</h2>
-              <p>
-                Eu sou um desenvolvedor iniciante com uma paixão por tecnologia
-                e aprendizado constante. Apesar de ainda não ter experiência
-                profissional, possuo uma formação sólida em programação e
-                habilidades de resolução de problemas. Estou ansioso para
-                aplicar o que aprendi em projetos futuros e continuar
-                desenvolvendo minhas habilidades.
-              </p>
+              <p v-html="profile.sobre.resume"></p>
 
-              <p>
-                Tenho experiência em trabalhar com linguagens de programação
-                como <i>Java</i>, <i>Python</i> e <i>JS</i>, além de ter
-                conhecimento básico de ferramentas de desenvolvimento de
-                software, como <i>Git</i> e <i>Linux</i>. Além disso, sou capaz
-                de trabalhar em equipe eficazmente para alcançar objetivos
-                comuns. Estou sempre procurando por novos desafios e
-                oportunidades para crescer como desenvolvedor e adquirir
-                experiência profissional.
-              </p>
+              <p v-html="profile.sobre.experience"></p>
             </div>
           </div>
         </section>
@@ -77,26 +61,9 @@
         <section class="container">
           <div class="col-md-8 offset-md-2 mt-3" data-aos="zoom-in-up">
             <h2 class="text-center">Formação</h2>
-            <p>
-              Fui aluno do Instituto Federeal de São Paulo no campus de Bragança
-              Paulista. Durante minha formação, tive a oportunidade de estudar
-              uma variedade de tópicos, incluindo redes de computadores,
-              desenvolvimento web, lógica de programação. Além disso, completei
-              diversos projetos de programação, incluindo desenvolvimento de
-              sistemas web utilizando o framework
-              <i>Nuxt</i>.
-            </p>
+            <p v-html="profile.formacao.if"></p>
 
-            <p>
-              Adicionalmente, eu tenho completado alguns cursos online para
-              ampliar minhas habilidades e conhecimentos, como por exemplo, um
-              curso de desenvolvimento web utilzando
-              <i>Nodejs utilizando Express.Js</i> e <i>MongoDB</i> oferecido
-              pela <i>Samsung Ocean</i>, outro curso de programação em
-              <i>Python</i> pela USP (Universidade de São Paulo). Estou sempre
-              em busca de novos desafios e oportunidades para crescer como
-              desenvolvedor e continuar aprendendo.
-            </p>
+            <p v-html="profile.formacao.curso"></p>
           </div>
         </section>
       </section>
@@ -110,6 +77,7 @@
 import AOS from 'aos'
 import Vue from 'vue'
 import $ from 'jquery'
+import $axios from 'axios'
 
 export default {
   head() {
@@ -118,28 +86,12 @@ export default {
     }
   },
 
-  data() {
-    return {
-      profile: {
-        name: 'Vinicius Serafim',
-        email: 'vserafim_o@outlook.com',
-        picture: {
-          HIGH: 'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=512&r=g&d=identicon',
-          LOW: 'http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon',
-        },
-        bio: 'Você vive hoje uma vida que gostaria de viver por toda a eternidade?',
-        tagsTipadas: [
-          { type: 'level', value: 'Aprendiz' },
-          { type: 'skill', value: 'Dev' },
-          { type: 'skill', value: 'Python' },
-          { type: 'skill', value: 'Spring' },
-          { type: 'skill', value: 'Nuxt' },
-          { type: 'location', value: 'Brasil' },
-        ],
-      },
+  async asyncData() {
+    const { data } = await $axios.get('http://127.0.0.1:3000/api/my/infos')
+    const infos = data.infos[0]
+    const profile = infos
 
-      isProfileVisible: true,
-    }
+    return { profile }
   },
 
   methods: {

@@ -3,12 +3,12 @@
     <Header></Header>
     <div class="container my-5">
       <h1 class="text-center" data-aos="zoom-in-down">
-        {{ project[`${path}`].title }}
+        {{ project.title }}
       </h1>
       <div>
         <ul class="text-center">
           <li
-            v-for="t in project[`${path}`].technologies"
+            v-for="t in project.technologies"
             :class="`
                 ${t.type}
                 badge badge-primary
@@ -31,21 +31,21 @@
       </div>
       <div class="row">
         <div class="col-lg-6" data-aos="zoom-in-right" data-aos-delay="300">
-          <img :src="project[`${path}`].image" class="img-fluid" />
+          <img :src="project.image" class="img-fluid" />
         </div>
         <div class="col-lg-6" data-aos="zoom-in-left" data-aos-delay="300">
           <h2>Descrição</h2>
-          <p>{{ project[`${path}`].description }}</p>
+          <p>{{ project.description }}</p>
           <h2>Detalhes</h2>
           <ul>
-            <li>Categoria: {{ project[`${path}`].category }}</li>
+            <li>Categoria: {{ project.category }}</li>
             <li>
               Repositório:
-              <a target="_blank" :href="project[`${path}`].repo">GitHub</a>
+              <a target="_blank" :href="project.repo">GitHub</a>
             </li>
             <li>
               App:
-              <a target="_blank" :href="project[`${path}`].deploy">Deploy</a>
+              <a target="_blank" :href="project.deploy">Deploy</a>
             </li>
           </ul>
         </div>
@@ -59,6 +59,7 @@
 import AOS from 'aos'
 import Vue from 'vue'
 import $ from 'jquery'
+import $axios from 'axios'
 
 export default {
   head() {
@@ -66,27 +67,17 @@ export default {
       title: this.project.title,
     }
   },
-  data() {
-    return {
-      path: this.$route.params.path,
-      project: {
-        pj1: {
-          title: 'Escala Populacional em 3D',
-          image: '/images/3d.png',
-          description:
-            'Um pequeno projeto para aprender mais sobre a tecnologia ThreeJs e como ela pode ser usada para adicionar elementos 3D às páginas web. Eu busquei explorar as diferentes funcionalidades e recursos disponíveis, como iluminação, texturas e pós processamento, e ver como eles podem ser combinados para criar experiências imersivas para o usuário. Por fim, estou ansioso para dar continuidade e implementar novas funcionalidade, corrigir alguns bugs',
-          releaseDate: '24 de janeiro de 2023',
-          category: 'Desenvolvimento Web',
-          repo: 'https://github.com/vinicin1101/world-population',
-          deploy: 'https://3d.vinicin.host',
-          technologies: [
-            { name: 'JavaScript', type: 'js' },
-            { name: 'ThreeJs', type: 'lib' },
-            { name: 'ExpressJs', type: 'fw' },
-          ],
-        },
-      },
-    }
+
+  async asyncData({ params }) {
+    console.log(params)
+
+    const { data } = await $axios.get(
+      'http://127.0.0.1:3000/api/my/project/?pj=' + params.path
+    )
+
+    console.log(data.project[0])
+
+    return { project: data.project[0] }
   },
 
   methods: {},

@@ -6,6 +6,10 @@ export default {
     base: '/'
   },
 
+  serverMiddleware: [
+    { path: "/api", handler: "~/api/index.js" },
+  ],
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Portifólio',
@@ -73,7 +77,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-
   }
 
 

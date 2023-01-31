@@ -20,6 +20,7 @@
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.19.3",
     "jquery": "^3.6.3",
+    "mongodb-legacy": "^4.0.2",
     "nuxt": "^2.15.8",
     "popper.js": "^1.16.1",
     "vue": "^2.6.14",

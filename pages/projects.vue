@@ -16,9 +16,9 @@
     >
       <a
         v-bind="c"
-        v-for="c in projetos"
+        v-for="c in projects"
         :key="c"
-        :href="`/project/${c.path}`"
+        :href="`/project/${c.ref_id}`"
         class="card bg-white p-3 text-center"
       >
         <div class="card-content-heading">
@@ -35,24 +35,18 @@
 </template>
   
   <script>
+import $axios from 'axios'
 export default {
   head() {
     return {
-      title: 'Meus projetos',
+      title: 'Meus projects',
     }
   },
 
-  data() {
-    return {
-      projetos: [
-        {
-          title: 'Escala Populacional em 3D',
-          description:
-            'Um pequeno projeto para aprender mais sobre a tecnologia ThreeJs',
-          path: 'pj1',
-        },
-      ],
-    }
+  async asyncData() {
+    const { data } = await $axios.get('http://127.0.0.1:3000/api/my/projects')
+
+    return { projects: data.projects }
   },
 }
 </script>
