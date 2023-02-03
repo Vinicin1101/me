@@ -87,7 +87,7 @@ export default {
   },
 
   async asyncData() {
-    const { data } = await $axios.get('http://127.0.0.1:3000/api/my/infos')
+    const { data } = await $axios.get('https://fringe-obsidian-louse.glitch.me/my/infos')
     const infos = data.infos[0]
     const profile = infos
 

@@ -44,7 +44,7 @@ export default {
   },
 
   async asyncData() {
-    const { data } = await $axios.get('http://127.0.0.1:3000/api/my/projects')
+    const { data } = await $axios.get('https://fringe-obsidian-louse.glitch.me/my/projects')
 
     return { projects: data.projects }
   },

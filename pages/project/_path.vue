@@ -72,7 +72,7 @@ export default {
     console.log(params)
 
     const { data } = await $axios.get(
-      'http://127.0.0.1:3000/api/my/project/?pj=' + params.path
+      'https://fringe-obsidian-louse.glitch.me/my/project/?pj=' + params.path
     )
 
     console.log(data.project[0])
