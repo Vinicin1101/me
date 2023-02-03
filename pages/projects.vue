@@ -17,7 +17,7 @@
         v-bind="c"
         v-for="c in projects"
         :key="c"
-        :href="`/project/${c.path}`"
+        :href="`/project/${c.ref_id}`"
         class="card retro p-3 text-center"
       >
         <div class="card-content-heading">
@@ -42,7 +42,9 @@ export default {
     }
   },
   async asyncData() {
-    const { data } = await $axios.get('https://fringe-obsidian-louse.glitch.me/my/projects')
+    const { data } = await $axios.get(
+      'https://fringe-obsidian-louse.glitch.me/my/projects'
+    )
 
     return { projects: data.projects }
   },
