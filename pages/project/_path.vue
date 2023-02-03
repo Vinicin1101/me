@@ -69,15 +69,11 @@ export default {
   },
 
   async asyncData({ params }) {
-    console.log(params)
-
     const { data } = await $axios.get(
       'https://fringe-obsidian-louse.glitch.me/my/project/?id=' + params.path
     )
 
-    console.log(data.project[0])
-
-    return { project: data.project[0] }
+    return { project: data.project }
   },
 
   methods: {},

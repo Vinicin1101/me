@@ -87,10 +87,10 @@ export default {
   },
 
   async asyncData() {
-    const { data } = await $axios.get('https://fringe-obsidian-louse.glitch.me/my/infos')
-    const infos = data.infos[0]
-    const profile = infos
-
+    const { data } = await $axios.get(
+      'https://fringe-obsidian-louse.glitch.me/my/info'
+    )
+    const profile = data.info[0]
     return { profile }
   },
 
