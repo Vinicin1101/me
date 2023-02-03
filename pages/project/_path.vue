@@ -67,7 +67,6 @@ export default {
       title: this.project.title,
     }
   },
-
   async asyncData({ params }) {
     const { data } = await $axios.get(
       'https://fringe-obsidian-louse.glitch.me/my/project/?id=' + params.path
@@ -86,6 +85,10 @@ export default {
 }
 </script>
 
-<style>
-/* Adicione estilos adicionais aqui */
+<style scoped>
+img {
+  aspect-ratio: 3/2;
+  width: 100%;
+  background-color: #000;
+}
 </style>
