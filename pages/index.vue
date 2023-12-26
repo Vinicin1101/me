@@ -63,7 +63,7 @@
             <h2 class="text-center">Formação</h2>
             <p v-html="profile.formacao.if"></p>
 
-            <p v-html="profile.formacao.curso"></p>
+            <p v-html="profile.formacao.cursos"></p>
           </div>
         </section>
       </section>
