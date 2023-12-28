@@ -21,12 +21,6 @@ export default {
       type: Object,
       default: Object(),
     },
-  },
-
-  data() {
-    return {
-      exp: Object(),
-    }
-  },
+  }
 }
 </script>
