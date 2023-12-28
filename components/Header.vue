@@ -36,11 +36,11 @@
           </a>
 
           <li class="nav-item btn-link mr-3">
-            <a href="projects" class="btn buttom-primary">Projetos</a>
+            <a id="projects" href="projects" class="btn buttom-primary" :hover="{ true : currentPath === 'projects' }">Projetos</a>
           </li>
 
           <li class="nav-item btn-link mr-3">
-            <a href="experiences" class="btn buttom-primary">Experiências</a>
+            <a id="experiences" href="experiences" class="btn buttom-primary" :hover="{ true: currentPath === 'experiences' }">Experiências</a>
           </li>
         </ul>
       </div>
@@ -91,6 +91,7 @@ export default {
   data() {
     return {
       isNavOpen: false,
+      currentPath: "",
     }
   },
 
@@ -110,5 +111,16 @@ export default {
         .removeClass('align-items-center')
     },
   },
+
+  created() {
+    // Atualiza o caminho atual quando a página é carregada
+    this.currentPath = this.$route.name;
+  },
+  
+  mounted() {
+    setTimeout(() => {
+      $(`#${this.currentPath}`).animate().addClass('isHere');
+    }, 500);
+  }
 }
 </script>

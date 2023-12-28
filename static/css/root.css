@@ -47,8 +47,8 @@ main > article {
   background: var(--bg);
 }
 
-.buttom-primary:hover,
-.buttom-secondary:hover {
+.buttom-primary:hover, .buttom-primary.isHere,
+.buttom-secondary:hover, .buttom-secondary.isHere {
   color: var(--hover-text);
   transform: translate(-0.25rem, -0.25rem) !important;
   border: 1px solid var(--hover-text);
