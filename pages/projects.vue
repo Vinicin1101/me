@@ -2,7 +2,7 @@
   <main>
     <Header />
 
-    <div
+    <article
       class="
         container
         mt-4
@@ -12,6 +12,7 @@
         gap-4
         justify-content-center
       "
+      id="main-content"
     >
       <a
         v-bind="c"
@@ -27,7 +28,7 @@
           <p>{{ c.description }}</p>
         </div>
       </a>
-    </div>
+    </article>
 
     <Footer />
   </main>

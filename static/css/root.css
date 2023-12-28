@@ -18,6 +18,10 @@ bio::before {
   content: '"';
 }
 
+main > article {
+  min-height: 60vh;
+}
+
 /* Botões personalizados */
 
 .btn-link {

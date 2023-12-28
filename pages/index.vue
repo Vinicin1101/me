@@ -31,7 +31,7 @@
           data-aos-delay="300"
         >
           <ul
-            class="col d-flex flex-wrap justify-content-center mb-2 mt-2 gap-3"
+            class="tags flex-row d-flex flex-wrap justify-content-center mb-2 mt-2 gap-3"
           >
             <li
               v-for="tag in profile.tagsTipadas"
@@ -43,8 +43,8 @@
           </ul>
         </nav>
 
-        <section class="container">
-          <div class="row">
+        <article class="container">
+          <section class="row">
             <div
               class="col-md-8 offset-md-2 mt-3 justify"
               data-aos="zoom-in-down"
@@ -55,17 +55,17 @@
 
               <p v-html="profile.sobre.experience"></p>
             </div>
-          </div>
-        </section>
+          </section>
+        </article>
 
-        <section class="container">
-          <div class="col-md-8 offset-md-2 mt-3" data-aos="zoom-in-up">
+        <article class="container">
+          <div class="col-md-8 offset-md-2 mt-3" data-aos="zoom-in-up" data-aos-delay="500">
             <h2 class="text-center">Formação</h2>
-            <p v-html="profile.formacao.if"></p>
+            <p v-html="profile.formacao.ifsp"></p>
 
-            <p v-html="profile.formacao.curso"></p>
+            <p v-html="profile.formacao.cursos"></p>
           </div>
-        </section>
+        </article>
       </section>
     </article>
     <Footer />
@@ -90,8 +90,7 @@ export default {
     const { data } = await $axios.get(
       'https://fringe-obsidian-louse.glitch.me/my/info'
     )
-    const profile = data.info[0]
-    return { profile }
+    return { profile: data }
   },
 
   methods: {

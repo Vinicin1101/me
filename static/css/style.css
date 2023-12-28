@@ -73,3 +73,11 @@ section.technologies a>img {
 section.technologies a:hover img {
   filter: none;
 }
+
+div.experiences:nth-child(odd) div{
+  text-align: right;
+}
+
+div.experiences:nth-child(odd) div ul{
+  flex-direction: row-reverse;
+}

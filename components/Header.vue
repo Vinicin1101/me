@@ -38,6 +38,10 @@
           <li class="nav-item btn-link mr-3">
             <a href="projects" class="btn buttom-primary">Projetos</a>
           </li>
+
+          <li class="nav-item btn-link mr-3">
+            <a href="experiences" class="btn buttom-primary">Experiências</a>
+          </li>
         </ul>
       </div>
     </nav>
