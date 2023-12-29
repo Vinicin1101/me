@@ -2,8 +2,7 @@
   <main>
     <Header />
 
-    <article
-      class="
+    <article class="
         container
         mt-4
         mr-auto
@@ -11,31 +10,23 @@
         flex-wrap
         gap-4
         justify-content-center
-      "
-      id="main-content"
-    >
-      <a
-        v-bind="c"
-        v-for="c in projects"
-        :key="c"
-        :href="`/project/${c.ref_id}`"
-        class="card retro p-3 text-center"
-      >
-        <div class="card-content-heading">
-          <h3>{{ c.title }}</h3>
+      " id="main-content">
+
+      <div v-for="c in projects" :key="c" class="card retro" style="width: 18rem;" @click="getProject(c.id)">
+        <div class="card-body">
+          <h5 class="card-title">{{ c.title }}</h5>
+          <p class="card-text">{{ c.TinyDescription}}</p>
         </div>
-        <div class="card-content-body">
-          <p>{{ c.description }}</p>
-        </div>
-      </a>
+      </div>
     </article>
 
     <Footer />
   </main>
 </template>
   
-  <script>
+<script>
 import $axios from 'axios'
+
 export default {
   head() {
     return {
@@ -47,8 +38,14 @@ export default {
       'https://fringe-obsidian-louse.glitch.me/my/projects'
     )
 
-    return { projects: data.projects }
+    return { projects: data }
   },
+
+  methods: {
+    getProject: async (id) => {
+      window.location.href = `/project/${id}`
+    }
+  }
 }
 </script>
 
@@ -72,7 +69,7 @@ export default {
   height: 200px;
 
   border: 1px solid #fff;
-  background: #ffabee;
+  background: #fcccf2;
   box-shadow: 0.4rem 0.4rem #000;
 
   border: 1px solid #000;

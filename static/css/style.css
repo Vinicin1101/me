@@ -5,53 +5,6 @@ img.profile_pic {
 
   border: 1px solid #fff;
   border-radius: 50%;
-
-  z-index: 1000;
-
-  transition: all 0.25s;
-}
-
-div.picture.active img.profile_pic {
-  position: absolute !important;
-  right: 0 !important;
-  top: calc(25vh - 45px) !important;
-
-  transform: scale(3.5) !important;
-
-  border: none !important;
-  border-radius: 0 !important;
-}
-
-div.picture.active::before {
-  content: "";
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-
-  width: 100vw;
-  height: 100vh;
-
-  background-color: #000000BA;
-
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-}
-
-div.picture.active::after {
-  content: "";
-
-  display: block;
-
-  width: 90px;
-  height: 90px;
-
-  border: 1px solid #fff;
-  border-radius: 50%;
-
-  background-image: url('https://www.gravatar.com/avatar/?s=90&d=mp');
-  background-size: 90px;
 }
 
 

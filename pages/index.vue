@@ -94,33 +94,6 @@ export default {
   },
 
   methods: {
-    showProfile() {
-      // selecionando os elementos
-      const $img = $('.profile_pic')
-      const $div = $('div.picture.position-relative')
-
-      // condição de ativação do popup
-      if ($div.hasClass('active')) {
-        // trocando a resolução da imagem
-        $img.attr('src', this.profile.picture.LOW)
-
-        // desativando o popup
-        $div.removeClass('active')
-
-        // desbloqueando o scroll
-        $('body').css('overflow', 'auto')
-      } else {
-        // Trocando a resuolução da imagem
-        $img.attr('src', this.profile.picture.HIGH)
-
-        // ativando o popup
-        $div.addClass('active')
-
-        // bloqueando o scroll
-        $('body').css('overflow', 'hidden')
-      }
-    },
-
     getDelay(e) {
       const time = (this.profile.tagsTipadas.indexOf(e) + 1) * 200
       return time

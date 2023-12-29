@@ -1,42 +1,21 @@
 <template>
   <header class="d-flex bg-black">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black mx-auto">
-      <a
-        href="#"
-        class="profile-link vertical-align-center navbar-brand"
-        v-if="!isNavOpen"
-      >
-        <img
-          src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
-          alt="profile_picture"
-          class="profile_pic rounded-circle"
-          id="profile_pic"
-        />
-      </a>
-      <button class="navbar-toggler" type="button" @click="showNav()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-sm navbar-dark justify-content-center bg-black mx-auto">
+      <div class="navbar-toggler">
+        <span class="btn buttom-primary nav-to" @click="showNav()">X</span>
+      </div>
       <div
         class="collapse navbar-collapse"
         id="navbarNav"
         :class="{ show: isNavOpen }"
       >
         <ul class="navbar-nav">
-          <a
-            href="#"
-            class="profile-link ml-0 vertical-align-center navbar-brand"
-            v-if="isNavOpen"
-          >
-            <img
-              src="http://www.gravatar.com/avatar/f8e067eb1582177fb3b223a6fddf279f?s=90&r=g&d=identicon"
-              alt="profile_picture"
-              class="profile_pic rounded-circle"
-              id="profile_pic"
-            />
-          </a>
-
           <li class="nav-item btn-link mr-3">
             <a id="projects" href="projects" class="btn buttom-primary" :hover="{ true : currentPath === 'projects' }">Projetos</a>
+          </li>
+          
+          <li class="nav-item btn-link mr-3">
+            <a id="index" href="/" class="btn buttom-primary" :hover="{ true : currentPath === 'index' }">Home</a>
           </li>
 
           <li class="nav-item btn-link mr-3">

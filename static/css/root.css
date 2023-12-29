@@ -32,7 +32,7 @@ main > article {
 .buttom-primary,
 .buttom-secondary {
   --bg: #fff;
-  --hover-bg: #ff90e8;
+  --hover-bg: #fcccf2;
   --hover-text: #000;
   color: #000;
   border-radius: 4px;
@@ -56,13 +56,17 @@ main > article {
   box-shadow: 0.25rem 0.25rem var(--bg);
 }
 
+.navbar-toggler{
+  border: none !important;
+}
+
 
 /* Bootstrap adapt */
 .btn:focus,
 .btn:active {
   color: #000 !important;
   background-color: #fff !important;
-  border: 1px solid #fff !important;
+  border: 1px solid #fff(0, 0%, 0%) !important;
   border-color: #fff !important;
 
   transform: translate(0) !important;
@@ -83,7 +87,7 @@ main > article {
 
 ::-webkit-scrollbar {
   background: #fff;
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -92,14 +96,18 @@ main > article {
 
 moz-scrollbar {
   filter: invert(1);
-  width: 10px;
+  width: 5px;
 }
 
 moz-scrollbar-thumb {
   background-color: #ff90e855;
 }
 
-/* tags semanticas */
+/* tags semânticas */
+
+.badge-primary:active{
+  /* border: 1px solid #000 !important; */
+}
 
 ul li[class^="skill"]::before {
   content: "🎯";
