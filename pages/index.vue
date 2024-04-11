@@ -23,7 +23,7 @@
           {{ profile.name }}
         </h3>
 
-        <!-- <bio class="text-center text-muted mt-2 mb-4">{{ profile.bio }}</bio> -->
+        <bio class="text-center text-muted mt-2 mb-4">{{ profile.bio }}</bio>
 
         <nav
           class="profile_tags mb-3"
